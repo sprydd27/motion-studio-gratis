@@ -1,6 +1,9 @@
-# Motion Studio — 14 Repo GitHub Gratis
+# Motion Studio — 28 Repo GitHub Gratis
 
 Dikirim 25 Nov 2026. "Satu motion studio lengkap, 0 rupiah, ga ada langganan, ga ada Adobe, ga ada render farm" — semuanya jalan tanpa GPU. Link pendek t.co sudah diurai ke alamat GitHub aslinya.
+
+**Update 27 Nov 2026:** tambah 14 repo dari post X @yepzXBT (lihat "Tambahan 27 Nov 2026"
+di bawah) — total jadi 28 repo.
 
 | # | Repo | Buat apa (kata owner) | GitHub |
 |---|------|--------------------|--------|
@@ -38,3 +41,51 @@ Dikirim 25 Nov 2026. "Satu motion studio lengkap, 0 rupiah, ga ada langganan, ga
 ## Rencana
 
 Rencana: coba bikin sesuatu malam 25 Nov 2026. Kandidat pertama yang paling nyambung sama kerjaan jalan: perbaiki pilot ASMR (RIFE buat gerakan + MusicGen/Tone.js buat suara), atau coba satu animasi Motion Canvas buat Layar Cerita.
+
+## Tambahan 27 Nov 2026: 14 repo dari @yepzXBT
+
+Dikirim 27 Nov 2026. Post X @yepzXBT (25 Nov 2026, 28,6 rb views):
+"Coba pake 20 repo GitHub ini jika kamu ingin membuat Vidio menggunakan muse".
+Dari 20 itu, 5 sudah ada di daftar 14 pertama + FFmpeg sudah jadi tool —
+sisanya 14 baru di bawah ini. Install 27 Nov 2026, laporan di
+~/workspace/motion-studio/INSTALL.md ("Tambahan 27 Nov 2026").
+
+| # | Repo | Buat apa | GitHub | Status install |
+|---|------|----------|--------|-------|
+| 15 | Motion | spring animation & transisi smooth | https://github.com/motiondivision/motion | OK 14.14.0 |
+| 16 | GSAP | timeline animasi powerful, sekarang full gratis | https://github.com/greensock/GSAP | OK 3.15.1 |
+| 17 | Tweakpane | sesuaikan parameter animasi real-time | https://github.com/cocopon/tweakpane | OK 4.0.5 |
+| 18 | react-three-rapier | fisika realistis di scene Three.js/React | https://github.com/pmndrs/react-three-rapier | OK 2.2.0 |
+| 19 | react-postprocessing | glow, depth of field, efek film di Three.js | https://github.com/pmndrs/react-postprocessing | OK 3.2.2 |
+| 20 | three.quarks | partikel & efek visual dramatis di Three.js | https://github.com/Alchemist0823/three.quarks | OK 0.18.0 |
+| 21 | Manim | animasi penjelasan, formula, diagram | https://github.com/ManimCommunity/manim | OK 0.22.1 |
+| 22 | librosa | deteksi beat biar animasi pas ketukan | https://github.com/librosa/librosa | OK 1.0.1 |
+| 23 | WhisperX | auto-align subtitle, support Indonesia | https://github.com/m-bain/whisperX | OK 3.8.6 |
+| 24 | Openverse API | SFX, ambient, musik gratis tanpa API key | https://github.com/WordPress/openverse | API OK |
+| 25 | motion-design-skill | skill prinsip motion design (timing, easing, 12 prinsip Disney) | https://github.com/LottieFiles/motion-design-skill | link-only |
+| 26 | hairline | ide/SVG jadi animasi line art isometrik | https://github.com/lucasmarkes/hairline | link-only |
+| 27 | anatomy | diagram 3D mesin & struktur interaktif | https://github.com/wheresryan22/anatomy | link-only |
+| 28 | anatomy-reveal | exploded view + highlight produk, film product-reveal | https://github.com/annnguyentt/anatomy-reveal-skill | link-only |
+
+### Overlap dengan 14 pertama (5 repo)
+
+- Remotion Skills (10), Remotion (engine, bagian dari 10), Blender (08),
+  Three.js (09), Lottie Web (11) — sudah ada, tidak dihitung dua kali.
+- FFmpeg (20 di post) sudah jadi tool sistem (ffmpeg 8.1.2), bukan repo baru.
+
+### Cocok buat kerjaan kita (tambahan)
+
+- **WhisperX (23)** — subtitle Indonesia auto-align: ganti/tingkatkan faster-whisper
+  di pipeline clipper.
+- **Openverse API (24)** — SFX/ambient/musik gratis tanpa key: jawaban buat
+  kelemahan terbesar pilot ASMR (suara masih sintetis). API teruji 27 Nov:
+  `api.openverse.org/v1/audio/?q=rain` → 200, 240 hasil, file mp3 bisa diunduh.
+- **GSAP (16) + Motion (15)** — timeline + spring buat animasi teks/judul di video HTML.
+- **Manim (21)** — animasi penjelasan/formula: gaya Irsan Saputra buat Layar Cerita.
+- **motion-design-skill (25)** — prinsip motion (timing/easing/Disney) sebagai skill.
+- **anatomy (27) + anatomy-reveal (28) + hairline (26)** — diagram isometrik &
+  product-reveal: buat konten edukasi/visualisasi GTA.
+- **librosa (22)** — beat detection: sinkronkan gerakan dengan ketukan musik.
+- **react-three-rapier (18) + react-postprocessing (19) + three.quarks (20)** —
+  fisika + efek film + partikel di scene 3D (Three.js).
+- **Tweakpane (17)** — tuning parameter animasi real-time.

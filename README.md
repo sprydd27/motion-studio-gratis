@@ -2,14 +2,15 @@
 
 Satu studio video lengkap, 0 rupiah. Tanpa GPU, tanpa langganan, tanpa Adobe, tanpa render farm.
 
-Kurasi 14 repo open-source + skill + playbook + pipeline yang dipakai sehari-hari buat produksi video: animasi berkode (Remotion, Motion Canvas, Hyperframes), motion library (anime.js, PixiJS, Three.js, dan kawan-kawan), interpolasi frame (RIFE), sampai pipeline clipper, ASMR, dan drama AI.
+Kurasi 28 repo open-source + skill + playbook + pipeline yang dipakai sehari-hari buat produksi video: animasi berkode (Remotion, Motion Canvas, Hyperframes), motion library (anime.js, PixiJS, Three.js, GSAP, Motion, dan kawan-kawan), interpolasi frame (RIFE), subtitle (WhisperX), suara (Openverse, librosa, Tone.js), sampai pipeline clipper, ASMR, dan drama AI.
 
 ## Isi repo
 
 | Folder | Isi |
 |---|---|
 | `skills/` | 11 skill: Remotion, Hyperframes (+ CLI, registry, media-use, reverse-any-video, style-sampling), Motion Design Toolkit, YouTube highlight clipper, GTA 6 content creator, rights gate |
-| `playbooks/` | FYP Playbook (alur produksi + riset FYP 2026) dan daftar 14 repo |
+| `skills-upstream/` | 4 skill dari repo lain (motion-design-skill, hairline, anatomy, anatomy-reveal) — link-only: README + link + clone, tidak di-vendor |
+| `playbooks/` | FYP Playbook (alur produksi + riset FYP 2026) dan daftar 28 repo |
 | `motion-studio/` | Install script + `package.json` + catatan install terverifikasi |
 | `pipelines/clipper/` | Video panjang jadi klip vertikal 1080x1920 (transkrip + ffmpeg) |
 | `pipelines/asmr/` | Animasi ASMR masak cozy storybook (Ken Burns + efek ambient + RIFE) |
@@ -38,6 +39,8 @@ Lalu baca `playbooks/FYP-PLAYBOOK.md` buat alur produksi, dan `skills/` buat car
 
 - **MusicGen (audiocraft)** — tidak diinstall default. Lisensinya non-komersial, dan install-nya gagal di Python 3.12 (pin `av==11.0.0` tidak ada wheel + konflik torch 2.1.0). Dua jalur ada di `motion-studio/INSTALL.md`. Pengganti sementara: Tone.js + ffmpeg.
 - **Model RIFE** diunduh saat install (Google Drive, 11 MB, `flownet.pkl` v4 HD).
+- **Manim dan WhisperX** jalan di venv Python terpisah (`venv-manim/`, `venv-whisperx/`) supaya pin-pinnya tidak bentrok dengan venv utama — lihat `motion-studio/INSTALL.md`.
+- **Skill upstream** (motion-design-skill, hairline, anatomy, anatomy-reveal) tidak di-vendor — clone dari repo aslinya, lihat `skills-upstream/`.
 - **Komponen GTA Hyperframes** (126 komponen) tidak di-vendor — jalankan `hyperframes/setup-gta-components.sh` buat clone.
 
 ## Lisensi
