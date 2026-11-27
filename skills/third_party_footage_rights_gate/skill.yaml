@@ -1,0 +1,23 @@
+name: third_party_footage_rights_gate
+title: Third-party footage rights gate
+description: Establish a recorded rights basis before downloading or cutting third-party footage, and keep unapproved clips held.
+category: Creation
+include_in_prompt: true
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:08360527
+  - message:d8c97b0a
+  - message:assistant-msg-97768f52
+  - ~/workspace/gta6-channel/RULES.md
+  - ~/workspace/custom-skills/youtube-highlight-clipper/SKILL.md
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the 30 days after install, no third-party footage is downloaded or cut before a recorded rights basis is written, and no held clip is scheduled or posted without a basis plus a Gauntlet YES plus owner approval for that specific clip.
+    window_days: 30
+  rationale: 'The youtube-highlight-clipper skill downloads a source video right after the brief and has no rights step, while RULES.md section 5 lists the only accepted bases and records that basis (d) was approved for official Twitch clips on 20 Nov 2026. Two full MrBeast YouTube videos were downloaded and cut into ten clips with no basis under section 5, nine clips stayed held, and the assistant then described them as schedulable later (message:assistant-msg-97768f52) after the user said Stop di sini cukup 2 video GTA dulu (message:d8c97b0a). The gta6-content-creator skill already states the rights rule, but the clipper run bypassed it, so a standalone gate listed in every conversation is the missing step that runs before any cutting playbook. I checked and did not propose anything else: the dev-score collapse is already covered by makefun_transcript_gated_entries, the 100 tool failures in chunk 2 carry only tool and call_id with no error text or attributable mechanism, and the handoff-suppression and memory recurring-failure hypotheses are policy and prompt cadence out of this loop scope. All four managed skills are inside their measurement windows, so none was re-proposed.'
+  needs_review: false
+  review_after: 2026-12-23T02:50:40.471973+00:00
+  reviewed_at: 2026-11-23T02:50:40.471973+00:00
+  run_id: sirun_d69df806998148e58cd4e7baac8cba5c

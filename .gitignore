@@ -1,0 +1,13 @@
+# hasil install & artefak lokal — jangan ikut ke repo
+node_modules/
+venv/
+__pycache__/
+.pip-tmp/
+motion-studio/tmp/
+motion-studio/js/node_modules/
+*.mp4
+*.mov
+*.wav
+*.m4a
+*.pkl
+.DS_Store
