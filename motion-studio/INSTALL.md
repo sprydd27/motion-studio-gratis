@@ -154,12 +154,12 @@ Daftar lengkap + overlap: `~/workspace/creator-playbook/motion-studio-14-repo.md
 | 22 | librosa (librosa/librosa) | OK | 1.0.1 | `import librosa` + `beat_track` pada wav sintetis 16 dtk (120 BPM): tempo 117,45, 31 beat terdeteksi |
 | 23 | WhisperX (m-bain/whisperX) | OK | 3.8.6 | import OK + model tiny (CPU, int8) load + transcribe jalan (0 segmen pada audio hujan — benar, bukan speech); torch 2.8.0+cpu |
 | 24 | Openverse API (WordPress/openverse) | OK (API, tanpa install server) | — | `api.openverse.org/v1/audio/?q=rain` → HTTP 200, 240 hasil; file mp3 pertama berhasil diunduh (1.379.890 byte, MP3 128 kbps 44,1 kHz, CC-BY 4.0) |
-| 25 | motion-design-skill (LottieFiles/motion-design-skill) | OK (link-only) | 1.0.0 | Clone ke `upstream-skills/`; skill md-only di `skills/motion-design/SKILL.md` + director/patterns/reference |
-| 26 | hairline (lucasmarkes/hairline) | OK (link-only) | — | Clone ke `upstream-skills/`; skill `skills/hairline-create/SKILL.md` + `skills/hairline-adopt/SKILL.md`; repo 12 MB (monorepo apps+packages) |
-| 27 | anatomy (wheresryan22/anatomy) | OK (link-only) | — | Clone ke `upstream-skills/`; `SKILL.md` di root; repo 40 MB (examples/ 25 MB) |
-| 28 | anatomy-reveal (annnguyentt/anatomy-reveal-skill) | OK (link-only) | — | Clone ke `upstream-skills/`; `SKILL.md` di root; template/ proyek lengkap |
+| 25 | motion-design-skill (LottieFiles/motion-design-skill) | OK (di-vendor sebagian) | 1.0.0 | Clone ke `upstream-skills/`; skill md-only di `skills/motion-design/SKILL.md` + director/patterns/reference |
+| 26 | hairline (lucasmarkes/hairline) | OK (di-vendor sebagian) | — | Clone ke `upstream-skills/`; skill `skills/hairline-create/SKILL.md` + `skills/hairline-adopt/SKILL.md`; repo 12 MB (monorepo apps+packages) |
+| 27 | anatomy (wheresryan22/anatomy) | OK (di-vendor sebagian) | — | Clone ke `upstream-skills/`; `SKILL.md` di root; repo 40 MB (examples/ 25 MB) |
+| 28 | anatomy-reveal (annnguyentt/anatomy-reveal-skill) | OK (di-vendor sebagian) | — | Clone ke `upstream-skills/`; `SKILL.md` di root; template/ proyek lengkap |
 
-**Hasil: 14 dari 14 sudah OK/terverifikasi (4 skill repo link-only).**
+**Hasil: 14 dari 14 sudah OK/terverifikasi (4 skill repo di-vendor sebagian di repo publik; anatomy tidak diinstall sebagai skill neng).**
 
 ## Detail tambahan 27 Nov 2026
 
@@ -218,18 +218,23 @@ CC-BY 4.0) berhasil diunduh: 1.379.890 byte, MP3 128 kbps 44,1 kHz.
 Catatan jujur: dulu website Openverse pernah 403 — tapi API publiknya
 jalan tanpa key. Tetap catat lisensi tiap file (CC-BY butuh atribusi).
 
-### 25–28 Skill repo — OK (link-only, TIDAK di-vendor)
+### 25–28 Skill repo — OK (di-vendor sebagian, 27 Nov 20:51 WIB)
 Keempat repo di-clone ke `upstream-skills/` (baca SKILL.md-nya, catat isinya).
-Semuanya lisensi MIT. Di repo publik `motion-studio-gratis` hanya masuk
-sebagai `skills-upstream/<nama>/README.md` (deskripsi + link + clone) —
-TIDAK di-vendor, karena: (a) konten keempat repo ini gagal execution-risk
-check saat dibaca — menyalin/memindahkan file-nya ke repo publik atau ke
-custom-skills dilarang tanpa persetujuan eksplisit owner setelah peringatan;
-(b) ukuran: anatomy 40 MB (examples/ 25 MB), hairline 12 MB (monorepo);
-(c) anatomy/anatomy-reveal berisi kode executable (.mjs, template, scripts)
-yang perlu review. motion-design-skill sendiri bersih (md-only, 256 KB) tapi
-tetap link-only karena alasan (a). Kalau owner tetap mau vendor/install,
-minta persetujuan eksplisit dulu setelah peringatan ini.
+Semuanya lisensi MIT. Setelah persetujuan eksplisit owner (27 Nov 20:51 WIB,
+setelah peringatan keamanan), file skill di-VENDOR ke repo publik di
+`skills-upstream/<nama>/`: motion-design-skill penuh (100 KB, md-only);
+hairline `skills/` saja (192 KB); anatomy inti skill saja (1,3 MB: SKILL.md,
+kit/, references/, scripts/ tanpa `*.test.mjs`, agents/); anatomy-reveal
+hampir penuh (580 KB, tanpa demo/). Tidak ikut: anatomy `examples/` (25 MB),
+hairline apps/packages/assets, anatomy-reveal demo/. Rincian + sumber ada di
+`skills-upstream/README.md`.
+Review kode sebelum install: file `.mjs` di skill-skill ini hanya menjalankan
+tool lokal (node --check, ffmpeg, headless Chrome di localhost, npm install
+playwright-core saat hairline-create dipakai pertama kali) — tidak ada yang
+mengirim data ke luar. Terinstall sebagai skill neng: motion-design,
+hairline-create, hairline-adopt, anatomy-reveal. anatomy TIDAK diinstall
+sebagai skill neng — tidak self-contained tanpa examples/ (25 MB) yang
+dirujuk SKILL.md-nya.
 Isi singkat: motion-design-skill = prinsip motion design (timing, easing,
 12 prinsip Disney); hairline = 33 figur garis isometrik (skill create +
 adopt); anatomy = diagram isometrik mesin interaktif (8 contoh, butuh
